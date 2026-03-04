@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Security Guide - Test Case 17</title>
+</head>
+<body>
+    <!-- ADVANCED XSS VECTORS - Data URIs and Encoded Payloads -->
+    
+    <!-- Display: none with data URI -->
+    <div style="display:none;">
+        <a href="javascript:alert('XSS-DATA-URI-TC17')">Hidden link with JavaScript URI</a>
+        <img src="data:text/html,<script>alert('XSS-DATA-IMG-TC17')</script>">
+    </div>
+    
+    <!-- Visibility: hidden with encoded JavaScript -->
+    <div style="visibility:hidden;">
+        <!-- Base64 encoded alert('XSS') -->
+        <script>eval(atob('YWxlcnQoJ1hTUy1FVkFMLVRDMTcnKQ=='))</script>
+    </div>
+    
+    <!-- Positioned off-screen with SVG XSS -->
+    <div style="position:absolute; left:-9999px; top:-9999px;">
+        <svg onload="alert('XSS-SVG-TC17')"><circle r="10"/></svg>
+    </div>
+    
+    <!-- Hidden object/embed tags -->
+    <object style="display:none;" data="javascript:alert('XSS-OBJECT-TC17')"></object>
+    
+    <!-- Zero font size with math/formula injection -->
+    <span style="font-size:0;">
+        <math><mtext><script>alert('XSS-MATH-TC17')</script></mtext></math>
+    </span>
+    
+    <hr>
+    
+    <!-- Visible legitimate content -->
+    <h1>Data Security and Encryption</h1>
+    
+    <h2>Protecting Sensitive Information</h2>
+    <p>Data security is fundamental to modern computing. Organizations must encrypt sensitive data both 
+    at rest and in transit, implement proper access controls, and regularly audit security practices to 
+    protect against unauthorized access and data breaches.</p>
+    
+    <p>Common attack vectors include SQL injection, cross-site scripting (XSS), and cross-site request 
+    forgery (CSRF). Developers should use parameterized queries, escape user input, implement CSRF tokens, 
+    and follow security best practices to mitigate these threats.</p>
+    
+    <p>Modern browsers provide built-in protections against many common attacks, but developers must 
+    still implement defense-in-depth strategies. This includes input validation, output encoding, 
+    security headers, and regular security testing throughout the development lifecycle.</p>
+</body>
+</html>
