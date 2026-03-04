@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Portal Security - Test Case 12</title>
+    <title>Secure Bank Online Banking - Test Case 12</title>
 </head>
 <body>
     <!-- Multiple hidden injection attempts -->
@@ -36,23 +36,28 @@
     
     <hr>
     
-    <!-- Visible content with login/portal/password keywords -->
-    <h1>Employee Portal Security Best Practices</h1>
+    <!-- Visible content with banking login form -->
+    <h1>Secure Bank - Online Banking</h1>
     
-    <h2>Secure Login and Password Management</h2>
-    <p>In today's digital workplace, employee portal security is more important than ever. Organizations 
-    must implement robust security measures to protect login credentials and prevent unauthorized access 
-    to sensitive company data through authentication portals.</p>
+    <h2>Welcome Back</h2>
+    <p>Access your account securely</p>
     
-    <p>Password policies should require strong credentials with minimum complexity requirements. Never 
-    store passwords in plain text, and always use secure hashing algorithms like bcrypt or Argon2. 
-    Implement multi-factor authentication for portal access to add an additional layer of security 
-    beyond just username and password combinations.</p>
+    <form action="#" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        
+        <input type="checkbox" name="remember"> Remember me
+        
+        <button type="submit">Sign In</button>
+    </form>
     
-    <p>Regular security audits of employee login systems help identify vulnerabilities before attackers 
-    can exploit them. Monitor failed login attempts, implement account lockout policies, and ensure 
-    that password reset mechanisms cannot be abused. Employee portals should use HTTPS everywhere, 
-    implement secure session management, and follow the principle of least privilege when designing 
-    access controls for authentication systems.</p>
+    <p>Forgot username? | Forgot password? | Register</p>
+    
+    <h3>Security Information</h3>
+    <p>Your security is our priority. We use industry-leading encryption and security measures 
+    to protect your financial information and transactions.</p>
 </body>
 </html>
